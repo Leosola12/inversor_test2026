@@ -506,7 +506,7 @@ st.markdown("""
     <div class="step-num">00</div>
     <div>
         <div class="step-title">Tus objetivos de inversión</div>
-        <div class="step-desc">El punto de partida — y la distribución real de tu capital</div>
+        <div class="step-desc">El punto de partida que derivó en la creación de este Test — y la distribución real de tu capital</div>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -516,7 +516,7 @@ with st.expander("ℹ️ ¿Por qué empezamos por los objetivos?"):
     <strong>Contabilidad mental:</strong> las personas naturalmente segmentan su dinero en 'cuentas'
     con distintas tolerancias al riesgo. Un inversor puede ser absolutamente conservador con el dinero
     destinado a emergencias y simultáneamente especulativo con una porción menor de su capital.
-    Tratarte como un único perfil ignora esta realidad.
+    Tratarte como un único perfil ignora (o simplifica DEMASIADO) esta realidad. Ese es nuestro mayor principio.
     """)
 
 objetivos_sel = st.multiselect(
@@ -656,7 +656,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-with st.expander("ℹ️ Por qué el horizonte lo cambia todo"):
+with st.expander("ℹ️ ¿Por qué el horizonte lo cambia todo?"):
     info("""
     Un inversor con horizonte de 10 años puede y debería tolerar más volatilidad que uno que necesita
     el dinero en 18 meses. El error más común: <strong>invertir en activos de largo plazo con capital
