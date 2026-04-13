@@ -1195,7 +1195,7 @@ if generar:
 st.markdown("""
 <div class="footer">
     <strong>Diagnóstico Conductual del Inversor</strong><br>
-    Finanzas e Inversiones en la Era IA · FCE UNLP · 2025<br><br>
+     FCE UNLP · Seminario de Finanzas e Inversiones en la Era IA · 2026<br><br>
     <span style="opacity:0.5;">Conceptos aplicados: aversión a la pérdida, contabilidad mental, efecto manada, FOMO, exceso de actividad, disposition effect</span>
 </div>
 """, unsafe_allow_html=True)
