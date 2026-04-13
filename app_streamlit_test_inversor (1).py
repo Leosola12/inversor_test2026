@@ -1170,7 +1170,7 @@ if generar:
         <p><strong style="color:var(--accent)">1. Comportamiento ≠ autopercepción.</strong> No alcanza con saber cómo te describís. Importa cómo actuaste en la última caída real, con qué frecuencia revisás tu cartera, de dónde vienen tus decisiones.</p>
         <p><strong style="color:var(--accent)">2. Un inversor no es un único perfil.</strong> La misma persona puede ser conservadora con su fondo de emergencia y especulativa con otro capital — y eso es completamente racional. La distribución de capital entre objetivos es una decisión de inversión en sí misma.</p>
         <p><strong style="color:var(--accent)">3. Las inconsistencias son la información más valiosa.</strong> La brecha entre lo que creemos que somos y cómo actuamos en realidad es lo que los tests tradicionales no capturan — y lo que este modelo pone en el centro.</p>
-        <p>El resultado no es una etiqueta. Es un mapa.</p>
+        <p>El resultado no es una etiqueta. Es un mapa. Ahora depende de vos caminarlo y avanzar.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -1196,6 +1196,6 @@ st.markdown("""
 <div class="footer">
     <strong>Diagnóstico Conductual del Inversor</strong><br>
      FCE UNLP · Seminario de Finanzas e Inversiones en la Era IA · 2026<br><br>
-    <span style="opacity:0.5;">Conceptos aplicados: aversión a la pérdida, contabilidad mental, efecto manada, FOMO, exceso de actividad, disposition effect</span>
+    <span style="opacity:0.5;">Conceptos aplicados: Aversión a la pérdida, Contabilidad mental, Efecto manada, FOMO, Exceso de actividad, disposition effect (venta prematura)</span>
 </div>
 """, unsafe_allow_html=True)
