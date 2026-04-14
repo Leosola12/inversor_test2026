@@ -525,7 +525,26 @@ objetivos_sel = st.multiselect(
     format_func=lambda k: f"{OBJETIVOS_OPCIONES[k]['icon']} {OBJETIVOS_OPCIONES[k]['nombre']}",
     default=["ahorro", "largo_plazo"],
 )
+# ── Mostrar descripción de objetivos seleccionados ──
+if objetivos_sel:
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("#### 📌 Tus objetivos seleccionados")
 
+    for obj_key in objetivos_sel:
+        obj = OBJETIVOS_OPCIONES[obj_key]
+
+        st.markdown(
+            f"""
+            <div style="margin-bottom:0.6rem;">
+                <span style="font-size:1.1rem;">{obj['icon']}</span>
+                <strong>{obj['nombre']}</strong><br>
+                <span style="font-size:0.85rem; color:var(--muted);">
+                    {obj['desc']}
+                </span>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 pct_capital = {}
 total_pct   = 0
 
