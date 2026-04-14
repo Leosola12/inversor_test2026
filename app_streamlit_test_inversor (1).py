@@ -491,7 +491,7 @@ st.markdown("""
     <div class="hero-eyebrow">◈ Diagnóstico Conductual del Inversor</div>
     <h1>No sos un solo<br><em>perfil inversor</em></h1>
     <div class="hero-sub">
-        Los tests tradicionales te colapsan en una etiqueta. Este diagnóstico parte de una premisa distinta:
+        Los tests tradicionales te definen en una única etiqueta. Nuestro diagnóstico parte de una premisa distinta:
         el mismo inversor puede ser conservador con su fondo de emergencia y especulativo con otro capital.
         Eso no es inconsistencia — es racionalidad.
     </div>
