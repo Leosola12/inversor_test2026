@@ -1174,113 +1174,23 @@ if generar:
     </div>
     """, unsafe_allow_html=True)
 
-st.markdown("---")
-nombre = st.text_input("Nombre para el informe:")
+    # ── EXPORT PDF ──
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown('<div class="section-title" style="font-size:1.2rem;">Exportar diagnóstico</div>', unsafe_allow_html=True)
 
-if st.button("📄 Descargar PDF"):
-    path = generar_pdf(
-        nombre,
-        arquetipo,
-        arq_data,
-        vector,
-        objetivos_sel,
-        inconsistencias,
-        sesgos_detectados,
-        recomendaciones
+    with st.spinner("Generando PDF..."):
+        pdf_buffer = generar_pdf(
+            arquetipo, arq_data, vector, objetivos_sel, pct_capital,
+            sesgos_detectados, inconsistencias, recomendaciones,
+            obj_riesgo, obj_horizonte
+        )
+
+    st.download_button(
+        label="⬇  Descargar reporte en PDF",
+        data=pdf_buffer,
+        file_name="diagnostico_inversor.pdf",
+        mime="application/pdf",
     )
-    with open(path, "rb") as f:
-        st.download_button("Descargar informe", f, file_name="diagnostico_inversor.pdf")
-
-# ─────────────────────────────────────────────
-# EXPORTACIÓN A PDF
-# ─────────────────────────────────────────────
-
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
-from reportlab.lib import colors
-from reportlab.lib.styles import getSampleStyleSheet
-
-def generar_pdf(nombre, arquetipo, arq_data, vector, objetivos_sel, inconsistencias, sesgos_detectados, recomendaciones):
-
-    doc = SimpleDocTemplate("/mnt/data/diagnostico_inversor.pdf")
-    styles = getSampleStyleSheet()
-    content = []
-
-    # ── Portada ──
-    content.append(Paragraph("Diagnóstico Conductual del Inversor", styles["Title"]))
-    content.append(Spacer(1, 12))
-    content.append(Paragraph(f"Nombre: {nombre}", styles["Normal"]))
-    content.append(Paragraph("Fecha: Generado automáticamente", styles["Normal"]))
-    content.append(Spacer(1, 20))
-
-    # ── Resumen Ejecutivo ──
-    content.append(Paragraph("Resumen Ejecutivo", styles["Heading2"]))
-    content.append(Spacer(1, 10))
-
-    content.append(Paragraph(
-        "Este informe presenta un diagnóstico integral de tu comportamiento como inversor, "
-        "analizando múltiples dimensiones más allá del riesgo.",
-        styles["Normal"]
-    ))
-
-    content.append(Spacer(1, 10))
-    content.append(Paragraph(f"<b>Patrón dominante:</b> {arquetipo}", styles["Normal"]))
-    content.append(Paragraph(arq_data["descripcion"], styles["Normal"]))
-    content.append(Spacer(1, 20))
-
-    # ── Dimensiones ──
-    content.append(Paragraph("Dimensiones del Inversor", styles["Heading2"]))
-    content.append(Spacer(1, 10))
-
-    table_data = [
-        ["Dimensión", "Puntaje"],
-        ["Riesgo", round(vector[0],1)],
-        ["Horizonte", round(vector[1],1)],
-        ["Disciplina", round(vector[2],1)],
-        ["Conocimiento", round(vector[3],1)],
-        ["Experiencia", round(vector[4],1)],
-    ]
-
-    table = Table(table_data)
-    table.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,0), colors.grey),
-        ('TEXTCOLOR',(0,0),(-1,0),colors.white),
-        ('GRID', (0,0), (-1,-1), 1, colors.black)
-    ]))
-
-    content.append(table)
-    content.append(Spacer(1, 20))
-
-    # ── Objetivos ──
-    content.append(Paragraph("Interpretación por Objetivo", styles["Heading2"]))
-    content.append(Spacer(1, 10))
-
-    for obj in objetivos_sel:
-        content.append(Paragraph(f"- {obj}", styles["Normal"]))
-
-    content.append(Spacer(1, 20))
-
-    # ── Inconsistencias ──
-    if inconsistencias:
-        content.append(Paragraph("Inconsistencias Detectadas", styles["Heading2"]))
-        for inc in inconsistencias:
-            content.append(Paragraph(f"<b>{inc['titulo']}</b>: {inc['texto']}", styles["Normal"]))
-        content.append(Spacer(1, 20))
-
-    # ── Sesgos ──
-    if sesgos_detectados:
-        content.append(Paragraph("Sesgos Conductuales", styles["Heading2"]))
-        for nombre, desc in sesgos_detectados.items():
-            content.append(Paragraph(f"<b>{nombre}</b>: {desc}", styles["Normal"]))
-        content.append(Spacer(1, 20))
-
-    # ── Recomendaciones ──
-    content.append(Paragraph("Recomendaciones", styles["Heading2"]))
-    for rec in recomendaciones:
-        content.append(Paragraph(f"- {rec['texto']}", styles["Normal"]))
-
-    doc.build(content)
-
-    return "/mnt/data/diagnostico_inversor.pdf"
 
 st.markdown("""
 <div class="footer">
