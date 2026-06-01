@@ -1172,14 +1172,14 @@ with col1:
     q_label("¿Viviste alguna pérdida significativa en tu cartera?")
     e2_opts = ["Nunca tuve pérdidas relevantes", "Sí, pero no entendí bien qué pasó", "Sí, y aprendí algo concreto de eso", "Varias veces — es parte del proceso"]
     e2 = st.radio("", e2_opts, key="e2", label_visibility="collapsed")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ ¿Para qué sirve esta pregunta?"):
         info("Haber atravesado una pérdida real y <strong>procesarla conscientemente</strong> es una de las experiencias formativas más valiosas. El mercado enseña lo que los libros no pueden.")
 
 with col2:
     q_label("¿Tenés una estrategia de inversión que puedas describir en 2 oraciones?")
     e3_opts = ["No, voy decidiendo caso por caso", "Tengo algunas ideas pero no un sistema claro", "Sí, aunque no siempre la sigo", "Sí, y la aplico consistentemente"]
     e3 = st.radio("", e3_opts, key="e3", label_visibility="collapsed")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ ¿Por qué es importante tener clara una estrategia?"):
         info("Poder <strong>articular tu estrategia</strong> es señal de que existe. Los inversores sin estrategia explícita suelen operar desde el ruido del momento.")
 
     q_label("¿Pudiste sostener una estrategia por más de 6 meses sin cambiarla fundamentalmente?")
