@@ -917,7 +917,7 @@ with col1:
     q_label("Tu cartera cae un 25% en 30 días. ¿Qué hacés?")
     r1_opts = ["Vendo todo, no puedo con esto", "Vendo una parte para reducir exposición", "No hago nada, el mercado se recupera", "Compro más, es una oportunidad"]
     r1 = st.radio("", r1_opts, key="r1", label_visibility="collapsed")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ Clickeá aquí para más información"):
         info("Este escenario distingue la <strong>aversión a la pérdida real</strong> de la declarada. Vender en la baja cristaliza la pérdida y suele perderse la recuperación.")
 
     q_label("¿Cuánta pérdida temporal podés aceptar sin perder el sueño?")
@@ -932,13 +932,13 @@ with col2:
     q_label("Un activo que compraste sube un 40%. ¿Qué hacés?")
     r4_opts = ["Vendo todo, ya gané suficiente", "Vendo la mitad y aseguro ganancias", "Mantengo, puede seguir subiendo", "Compro más, la tendencia es tu amiga"]
     r4 = st.radio("", r4_opts, key="r4", label_visibility="collapsed")
-    with st.expander("ℹ️"):
-        info("El <strong>disposition effect</strong>: los inversores tienden a vender ganadores rápido y retener perdedores. Detectar esta tendencia permite corregirla.")
+    with st.expander("ℹ️ ¿Por qué me preguntan esto?"):
+        info("El <strong>disposition effect</strong> (o 'efecto disposición'): los inversores tienden a vender sus posiciones ganadoras rápido y sostener por más tiempo sus posiciones con pérdidas. Detectar esta tendencia permite corregirla.")
 
 q_label("¿Qué te genera más malestar?")
 r5_opts = ["Perder dinero que ya tenía", "Perder una oportunidad de ganarlo"]
 r5 = st.radio("", r5_opts, key="r5", label_visibility="collapsed")
-with st.expander("ℹ️"):
+with st.expander("ℹ️ ¿Por qué me preguntan esto?"):
     info("Distingue <strong>aversión a la pérdida</strong> de <strong>FOMO</strong>. Ambos son sesgos, pero llevan a errores opuestos: uno a vender en pánico, el otro a comprar en euforia.")
 
 # Riesgo por objetivo
@@ -1051,20 +1051,20 @@ with col1:
 
     q_label("¿Cuáles operaste realmente alguna vez?")
     k2 = st.multiselect("Operados", ["Plazos fijos / FCI", "Bonos soberanos", "Acciones locales", "CEDEARs", "ETFs", "Opciones / Futuros", "Criptomonedas", "ONs (Obligaciones Negociables)"], label_visibility="collapsed", key="k2")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ ¿Por qué me preguntan esto?"):
         info("La <strong>brecha entre conocidos y operados</strong> revela cuánto de tu conocimiento es teórico. Operar con dinero real genera un aprendizaje que la teoría no puede reemplazar.")
 
 with col2:
     q_label("Una Obligación Negociable (ON) es:")
     k3_opts = ["Una acción de una empresa", "Deuda emitida por una empresa privada", "Deuda emitida por el Estado", "No lo sé con certeza"]
     k3 = st.radio("", k3_opts, key="k3", label_visibility="collapsed")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ ¿Para qué sirve esta pregunta?"):
         info("Las <strong>ONs</strong> son instrumentos de renta fija corporativa. No confundirlas con acciones ni con bonos soberanos es fundamental para armar una cartera coherente.")
 
     q_label("Si el dólar sube y la empresa emisora va bien, ¿qué le pasa a tu CEDEAR?")
     k4_opts = ["Sube solo por la empresa", "Sube solo por el dólar", "Sube por ambos factores", "No varía, es renta fija"]
     k4 = st.radio("", k4_opts, key="k4", label_visibility="collapsed")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ Clickeá acá para más información"):
         info("Los <strong>CEDEARs</strong> tienen doble exposición: al desempeño de la empresa subyacente y al tipo de cambio. Entender esto es clave para no llevarse sorpresas.")
 
     q_label("¿Cómo calificarías tu nivel de confianza para tomar decisiones hoy?")
@@ -1074,7 +1074,7 @@ with col2:
     q_label("Compraste un activo a $100. Hoy vale $60. ¿Qué hacés?")
     k6_opts = ["Espero a que vuelva a $100 para vender sin pérdida", "Evalúo si el activo sigue siendo válido; si no, vendo", "Promedio a la baja y compro más barato", "Vendo de inmediato para no perder más"]
     k6 = st.radio("", k6_opts, key="k6", label_visibility="collapsed")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ Clickeá acá para más información"):
         info("El precio de compra es <strong>irrelevante para la decisión de hoy</strong>. El mercado no sabe ni le importa cuánto pagaste. Anclar decisiones al precio de entrada es uno de los sesgos más costosos.")
 
 st.markdown('<hr class="dim-divider">', unsafe_allow_html=True)
@@ -1104,13 +1104,13 @@ with col1:
     q_label("¿Con qué frecuencia revisás tu cartera?")
     d1_opts = ["Varias veces al día", "Una vez por día", "Una vez por semana", "Una vez por mes o menos"]
     d1 = st.radio("", d1_opts, key="d1", label_visibility="collapsed")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ ¡Click acá!"):
         info("Revisar la cartera con alta frecuencia se asocia con <strong>mayor ansiedad y peores resultados</strong>. El ruido del corto plazo lleva a decisiones que dañan el rendimiento de largo plazo.")
 
     q_label("¿De dónde vienen principalmente tus decisiones de inversión?")
     d3_opts = ["Del estado de ánimo del momento", "De lo que leí en redes o grupos", "De análisis propio de cada activo", "De una estrategia definida que sigo"]
     d3 = st.radio("", d3_opts, key="d3", label_visibility="collapsed")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ ¿Qué es una 'fuente de decisión'?"):
         info("La <strong>fuente de decisión</strong> predice la consistencia mejor que el conocimiento. Un inversor con sistema mediocre suele ganarle a uno con mucho conocimiento pero sin proceso.")
 
     q_label("¿Cómo procesás los errores de inversión?")
@@ -1120,32 +1120,32 @@ with col1:
     q_label("Antes de tomar una decisión de inversión, ¿qué hacés con la información que la contradice?")
     d6_opts = ["Generalmente no la busco o no la encuentro", "La veo pero le doy menos peso que a la que me da la razón", "La evalúo por igual que la información favorable", "La busco activamente para poner a prueba mi tesis"]
     d6 = st.radio("", d6_opts, key="d6", label_visibility="collapsed")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ ¿Qué es el sesgo de confirmación?"):
         info("El <strong>sesgo de confirmación</strong> es invisible porque se activa antes de la decisión. No es que ignoremos la evidencia contraria: es que directamente no la buscamos.")
 
 with col2:
     q_label("En la última caída importante del mercado, ¿qué hiciste?")
     d2_opts = ["Vendí para detener las pérdidas", "Dudé mucho pero no hice nada", "Esperé sin demasiada ansiedad", "Aproveché para comprar más barato"]
     d2 = st.radio("", d2_opts, key="d2", label_visibility="collapsed")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ ¿Para qué sirve esta pregunta?"):
         info("El comportamiento <strong>durante una caída real</strong> es el mejor predictor de comportamiento futuro. Las respuestas a escenarios hipotéticos tienden a ser más racionales que las decisiones bajo presión.")
 
     q_label("¿Cuánto influyen las noticias financieras en tus decisiones?")
     d4_opts = ["Mucho — suelen cambiar mis posiciones", "Algo — las considero pero no siempre actúo", "Poco — las proceso pero tengo mis criterios", "Nada — sigo mi estrategia independientemente"]
     d4 = st.radio("", d4_opts, key="d4", label_visibility="collapsed")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ ¿Qué es el ruido informativo?"):
         info("El <strong>ruido informativo</strong> es uno de los mayores enemigos del inversor de largo plazo. La mayoría de las noticias financieras describe movimientos de corto plazo irrelevantes para una cartera bien estructurada.")
 
     q_label("¿Cuánto creés que tu análisis personal reduce el riesgo real de tus inversiones?")
     d7_opts = ["Mucho — el análisis detallado me protege de pérdidas", "Bastante — me ayuda a evitar errores grandes", "Algo — reduce ciertos riesgos pero no todos", "Poco — el mercado tiene mucha aleatoriedad que ningún análisis controla"]
     d7 = st.radio("", d7_opts, key="d7", label_visibility="collapsed")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ ¿Para qué sirve esta pregunta?"):
         info("El análisis es valioso, pero <strong>no elimina el riesgo</strong>. Creer que sí lo hace lleva a asumir posiciones más grandes de lo razonable. Los mejores inversores distinguen entre riesgo gestionable y aleatoriedad irreducible.")
 
     q_label("Cuando ganás dinero operando, ¿cómo tratás esas ganancias?")
     d8_opts = ["Las arriesgo más fácil — ya las 'gané en el mercado'", "Las reinvierto pero con los mismos criterios que el resto de mi capital", "Las paso a instrumentos más seguros para no perderlas", "No distingo de dónde vino el dinero — todo es el mismo capital"]
     d8 = st.radio("", d8_opts, key="d8", label_visibility="collapsed")
-    with st.expander("ℹ️"):
+    with st.expander("ℹ️ ¿Por qué es importante el origen del dinero?"):
         info("Tratar las ganancias del mercado como 'dinero de la casa' es <strong>contabilidad mental</strong>. $1.000 ganados en una operación valen exactamente lo mismo que $1.000 ahorrados. El origen del dinero no debería cambiar el nivel de riesgo que aceptás.</p>")
 
 st.markdown('<hr class="dim-divider">', unsafe_allow_html=True)
