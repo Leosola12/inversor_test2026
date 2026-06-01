@@ -1120,7 +1120,7 @@ with col1:
     q_label("Antes de tomar una decisión de inversión, ¿qué hacés con la información que la contradice?")
     d6_opts = ["Generalmente no la busco o no la encuentro", "La veo pero le doy menos peso que a la que me da la razón", "La evalúo por igual que la información favorable", "La busco activamente para poner a prueba mi tesis"]
     d6 = st.radio("", d6_opts, key="d6", label_visibility="collapsed")
-    with st.expander("ℹ️ ¿Qué es el sesgo de confirmación?"):
+    with st.expander("ℹ️ ¿Qué pasa con el sesgo de confirmación?"):
         info("El <strong>sesgo de confirmación</strong> es invisible porque se activa antes de la decisión. No es que ignoremos la evidencia contraria: es que directamente no la buscamos.")
 
 with col2:
