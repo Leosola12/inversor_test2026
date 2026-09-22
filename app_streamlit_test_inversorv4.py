@@ -417,7 +417,7 @@ Escribí la síntesis personalizada."""
                 {"role": "user",   "content": user_prompt},
             ],
             temperature=0.6,
-            max_tokens=650,
+            max_tokens=900,
         )
         return response.choices[0].message.content.strip()
     except Exception as e:
