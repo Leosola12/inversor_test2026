@@ -391,7 +391,7 @@ Reglas de tono y contenido — sin excepciones:
 - Nombrá los sesgos y las inconsistencias detectadas por su nombre, explicando cómo se manifiestan en ESTE perfil específico.
 - Si hay tensiones reales entre objetivos y perfil, decílas sin suavizarlas.
 - El cierre debe ser una frase que sintetice el mayor riesgo conductual concreto de esta persona. No un consejo genérico: algo que solo tenga sentido para este perfil.
-- Longitud: 180-280 palabras. Un solo bloque de texto, sin bullets ni títulos. No dejes frases cortadas a la mitad.
+- Longitud: 180-230 palabras. Un solo bloque de texto, sin bullets ni títulos. No dejes frases cortadas a la mitad.
 - Escribí en español rioplatense, tuteo."""
 
     user_prompt = f"""Datos del diagnóstico:
